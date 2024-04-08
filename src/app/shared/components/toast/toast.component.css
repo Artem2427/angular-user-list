@@ -1,0 +1,28 @@
+.toast-class,
+.success-toast,
+.error-toast {
+  position: absolute;
+  top: 56px;
+  right: 56px;
+  display: inline-flex;
+  min-width: 280px;
+  min-height: 56px;
+  max-height: 56px;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  border-radius: var(--border-radius);
+  font-size: 13px;
+  color: var(--white);
+}
+
+.success-toast {
+  background-color: var(--green);
+  box-shadow: 0px 10px 15px var(--green-shadow);
+}
+
+.error-toast {
+  background-color: var(--coral);
+  border-left: 0px 10px 15px var(--pink-shadow);
+}

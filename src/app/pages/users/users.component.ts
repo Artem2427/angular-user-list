@@ -5,6 +5,7 @@ import { InputComponent } from '@shared/components/input/input.component';
 import { SelectComponent } from '@shared/components/select/select.component';
 import { ControlValueAccessorDirective } from '@shared/directives/control-value-accessor.directive';
 import { FormUtilitiesService } from '@shared/services/form-utilities.service';
+import { ToastService, toastState } from '@shared/services/toast.service';
 
 @Component({
   selector: 'app-users',
@@ -16,6 +17,8 @@ import { FormUtilitiesService } from '@shared/services/form-utilities.service';
 export class UsersComponent {
   private formBuilder = inject(FormBuilder);
   protected formUtilities = inject(FormUtilitiesService);
+
+  private toastService = inject(ToastService);
 
   formRegister!: FormGroup;
 
@@ -29,5 +32,9 @@ export class UsersComponent {
 
   handleSubmit() {
     console.log(this.formRegister.value, 'form value')
+  }
+
+  handleButtonClick() {
+    this.toastService.showToast(toastState.error, 'Success message');
   }
 }

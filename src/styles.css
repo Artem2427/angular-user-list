@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -131,23 +131,23 @@ table {
 }
 
 :root {
-  --white: #FFFFFF;
-  --blue: #2E8FF0;
-  --pink: #F44682;
-  --coral: #EF7DA0;
-  --green: #66BB6A;
+  --white: #ffffff;
+  --blue: #2e8ff0;
+  --pink: #f44682;
+  --coral: #ef7da0;
+  --green: #66bb6a;
 
-  --main-bg: #EEF0F8;
-  --input-bg: #F3F6F9;
-  --table-row-bg: #F4F5F8;
-  --table-row-hover-bg: #EFF0F4;
+  --main-bg: #eef0f8;
+  --input-bg: #f3f6f9;
+  --table-row-bg: #f4f5f8;
+  --table-row-hover-bg: #eff0f4;
 
-  --pink-shadow: #F4468229;
-  --blue-shadow: #2E8FF029;
+  --pink-shadow: #f4468229;
+  --blue-shadow: #2e8ff029;
+  --green-shadow: #4caf505c;
 
-  --text-grey: #A4A4B5;
-  --text-dark: #3F4254;
-
+  --text-grey: #a4a4b5;
+  --text-dark: #3f4254;
 
   --border-radius: 6px;
   --main-padding: 16px;
@@ -156,7 +156,7 @@ table {
 body {
   font-size: 14px;
   padding: var(--main-padding);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--text-dark);
   background-color: var(--main-bg);
 }
