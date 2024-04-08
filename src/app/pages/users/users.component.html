@@ -46,3 +46,9 @@
     <button cButton type="submit">Submit</button>
   </form>
 </div>
+
+<button (click)="openModal(modalTemplate)">Open modal</button>
+
+<ng-template #modalTemplate>
+  <div>This is our custom modal content</div>
+</ng-template>

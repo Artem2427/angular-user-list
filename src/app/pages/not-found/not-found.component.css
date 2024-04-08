@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto;
+  height: calc(100vh - 32px);
+
+  font-size: 30px;
+  row-gap: 16px;
+}
