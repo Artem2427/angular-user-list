@@ -1,2 +1,48 @@
 <p>users works!</p>
 <h1>Test title</h1>
+<button cButton>First test</button>
+<button cButton [color]="'secondary'">Second test</button>
+
+<div [style]="{ marginTop: '30px', background: 'white' }">
+  <form
+    [formGroup]="formRegister"
+    [style]="{ display: 'flex', flexDirection: 'column', rowGap: '30px' }"
+    (ngSubmit)="handleSubmit()"
+  >
+    <c-input
+      customLabel
+      type="email"
+      id="email"
+      placeholder="jhonDoe@example.com"
+      [formControl]="formUtilities.getControl(formRegister, 'email')"
+      name="email"
+      [additionalValidators]="
+        formUtilities.getValidators(formRegister, 'email')
+      "
+    />
+
+    <c-input
+      customLabel
+      label="Password"
+      type="password"
+      placeholder="Enter password"
+      id="password1"
+      name="email"
+      [formControl]="formUtilities.getControl(formRegister, 'password')"
+      [additionalValidators]="
+        formUtilities.getValidators(formRegister, 'password')
+      "
+    />
+
+    <c-select
+      customLabel
+      label="Select"
+      id="select_1"
+      name="age"
+      [options]="['1', '2', '3']"
+      [formControl]="formUtilities.getControl(formRegister, 'age')"
+      [additionalValidators]="formUtilities.getValidators(formRegister, 'age')"
+    />
+    <button cButton type="submit">Submit</button>
+  </form>
+</div>

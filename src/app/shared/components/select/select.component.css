@@ -1,0 +1,26 @@
+.content-input {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 3px;
+}
+
+label {
+  font-size: 13px;
+}
+
+.select {
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--input-bg);
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--main-padding);
+  outline: none;
+}
+
+.error {
+  border: 1px solid var(--coral);
+  margin-bottom: 3px;
+}

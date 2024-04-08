@@ -1,0 +1,7 @@
+.error {
+  color: var(--coral);
+  font-size: 13px;
+  line-height: 1;
+  display: flex;
+  justify-content: flex-start;
+}

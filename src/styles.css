@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+/* Similar font to Helvetica */
+/* https://fontsplugin.com/google-fonts-helvetica-neue/ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 html,
 body,
@@ -126,4 +128,35 @@ table {
 }
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --white: #FFFFFF;
+  --blue: #2E8FF0;
+  --pink: #F44682;
+  --coral: #EF7DA0;
+  --green: #66BB6A;
+
+  --main-bg: #EEF0F8;
+  --input-bg: #F3F6F9;
+  --table-row-bg: #F4F5F8;
+  --table-row-hover-bg: #EFF0F4;
+
+  --pink-shadow: #F4468229;
+  --blue-shadow: #2E8FF029;
+
+  --text-grey: #A4A4B5;
+  --text-dark: #3F4254;
+
+
+  --border-radius: 6px;
+  --main-padding: 16px;
+}
+
+body {
+  font-size: 14px;
+  padding: var(--main-padding);
+  font-family: "Roboto", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--main-bg);
 }
