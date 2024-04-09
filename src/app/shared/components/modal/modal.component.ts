@@ -1,11 +1,13 @@
-import { Component, ElementRef, EventEmitter, Input, Output, } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output,ViewEncapsulation } from '@angular/core';
+import { ButtonComponent } from '../button/button.component';
+import { UserFormComponent } from '../user-form/user-form.component';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [],
+  imports: [ButtonComponent, UserFormComponent],
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css'
+  styleUrl: './modal.component.css',
 })
 export class ModalComponent {
   @Input() size? = 'md';

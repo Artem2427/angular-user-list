@@ -1,1 +1,9 @@
-<p>user works!</p>
+<div class="container">
+  <c-user-form
+    [user]="selectedUser | async"
+    [serverError]="serverError | async"
+    (onClose)="handleNavigateToUsers()"
+    (onCreateOrSave)="handleSaveUser($event)"
+    (onDelete)="handleDeleteUser($event)"
+  ></c-user-form>
+</div>

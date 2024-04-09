@@ -3,6 +3,7 @@ import { Component, Input, forwardRef } from '@angular/core';
 import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { ControlValueAccessorDirective } from '@shared/directives/control-value-accessor.directive';
 import { ErrorInputComponent } from '../error-input/error-input.component';
+import { SelectOption } from './type'
 
 @Component({
   selector: 'c-select',
@@ -23,7 +24,7 @@ import { ErrorInputComponent } from '../error-input/error-input.component';
   templateUrl: './select.component.html',
   styleUrl: './select.component.css'
 })
-export class SelectComponent <T> extends ControlValueAccessorDirective<T> {
+export class SelectComponent <T extends SelectOption> extends ControlValueAccessorDirective<T> {
   @Input() options: T[] = [];
   @Input()
   public id = '';

@@ -17,6 +17,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { PASSWORD_REGEX } from '@utils/regex';
 import { Subject, distinctUntilChanged, startWith, takeUntil, tap } from 'rxjs';
 
 @Directive({
@@ -39,7 +40,7 @@ export class ControlValueAccessorDirective<T>
       case 'email':
         return [Validators.required, Validators.email];
       case 'number':
-        return [Validators.pattern(/^[0-9]*$/), Validators.required];
+        return [Validators.pattern(PASSWORD_REGEX), Validators.required];
       case 'password':
         return [Validators.required, Validators.minLength(6)];
       case 'text':

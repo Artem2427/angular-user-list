@@ -1,0 +1,20 @@
+<div class="table-wrapper">
+  <table class="table">
+    <thead class="table-header">
+      <tr class="table-row">
+        @for(column of columns; track column) {
+        <th>{{ column.label }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      @for(item of items; track item) {
+      <tr (click)="handleRowClicked(item)" class="table-row">
+        @for(column of columns; track column) {
+        <td>{{ item[column.key] }}</td>
+        }
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,111 @@
+<header class="header">
+  <h2>
+    {{ user ? user.first_name + ' ' + user.last_name : 'Create new user' }}
+  </h2>
+  <span class="close" (click)="handleClose()">✕</span>
+</header>
+<form [formGroup]="userForm" (ngSubmit)="handleSubmit()" class="form">
+  <c-input
+    customLabel
+    type="text"
+    label="Username"
+    [isRequired]="true"
+    id="username"
+    placeholder="Username"
+    [formControl]="formUtilities.getControl(userForm, 'username')"
+    name="username"
+    [additionalValidators]="formUtilities.getValidators(userForm, 'username')"
+  />
+  <c-input
+    customLabel
+    type="text"
+    id="first_name"
+    label="First name"
+    [isRequired]="true"
+    placeholder="First name"
+    [formControl]="formUtilities.getControl(userForm, 'first_name')"
+    name="first_name"
+    [additionalValidators]="formUtilities.getValidators(userForm, 'first_name')"
+  />
+  <c-input
+    customLabel
+    type="text"
+    id="last_name"
+    label="Last name"
+    [isRequired]="true"
+    placeholder="Last name"
+    [formControl]="formUtilities.getControl(userForm, 'last_name')"
+    name="last_name"
+    [additionalValidators]="formUtilities.getValidators(userForm, 'last_name')"
+  />
+  <c-input
+    customLabel
+    type="email"
+    label="Email"
+    id="email"
+    [emailIcon]="true"
+    [isRequired]="true"
+    placeholder="jhonDoe@example.com"
+    [formControl]="formUtilities.getControl(userForm, 'email')"
+    name="email"
+    [additionalValidators]="formUtilities.getValidators(userForm, 'email')"
+  />
+
+  <c-select
+    customLabel
+    label="Type"
+    id="type"
+    [isRequired]="true"
+    name="user_type"
+    [options]="userTypeOptions"
+    [formControl]="formUtilities.getControl(userForm, 'user_type')"
+    [additionalValidators]="formUtilities.getValidators(userForm, 'user_type')"
+  />
+
+  <c-input
+    customLabel
+    label="Password"
+    type="password"
+    [isRequired]="true"
+    placeholder="Enter password"
+    id="password"
+    name="password"
+    [formControl]="formUtilities.getControl(userForm, 'password')"
+    [additionalValidators]="formUtilities.getValidators(userForm, 'password')"
+  />
+
+  <c-input
+    customLabel
+    label="Repeat Password"
+    type="password"
+    [isRequired]="true"
+    placeholder="Repeat password"
+    id="repeatPassword"
+    name="repeatPassword"
+    [formControl]="formUtilities.getControl(userForm, 'repeatPassword')"
+    [additionalValidators]="
+      formUtilities.getValidators(userForm, 'repeatPassword')
+    "
+  />
+
+  @if(userForm.errors && userForm.errors?.['PasswordNoMatch']) {
+  <div class="error">
+    {{ userForm.errors['PasswordNoMatch']?.message }}
+  </div>
+  }
+
+  <div class="buttons__block" [ngClass]="{ center: !user }">
+    @if (user) {
+    <button
+      cButton
+      type="button"
+      [color]="'secondary'"
+      (click)="handleDelete()"
+    >
+      Delete
+    </button>
+    }
+    <button cButton type="submit">@if (user) { Save } @else { Create }</button>
+  </div>
+  <ng-content></ng-content>
+</form>

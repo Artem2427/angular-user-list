@@ -40,4 +40,6 @@ export class InputComponent<T> extends ControlValueAccessorDirective<T> implemen
   public customErrorMessages: Record<string, string> = {};
   @Input()
   public name!: string;
+  @Input()
+  public emailIcon: boolean = false;
 }

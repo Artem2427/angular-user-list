@@ -1,12 +1,13 @@
 .content-input {
   display: flex;
-  align-items: center;
   flex-direction: column;
   row-gap: 3px;
+  position: relative;
 }
 
 label {
   font-size: 13px;
+  width: 100%;
 }
 
 .input {
@@ -18,9 +19,27 @@ label {
   align-items: center;
   padding: 0 var(--main-padding);
   outline: none;
+  max-width: 100%;
+  width: calc(100% - 32px);
+}
+
+.left-padding {
+  padding-left: 46px;
+  width: calc(100% - 58px);
+}
+
+.left-padding .error {
+  width: calc(100% - 58px);
+}
+
+.icon {
+  position: absolute;
+  left: 8px;
+  bottom: 11px;
 }
 
 .error {
   border: 1px solid var(--coral);
   margin-bottom: 3px;
+  width: calc(100% - 32px);
 }

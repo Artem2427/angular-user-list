@@ -33,6 +33,11 @@ export class ErrorInputComponent {
 
   private getErrorMessage(errors: Record<string, any>): string {
     const [errorName] = Object.keys(errors);
+
+    if (errorName === 'serverError') {
+      return errors['message']
+    }
+
     const errorFunction = DefaultErrorMessages[errorName];
     if (errorFunction) {
       return errorFunction(errors[errorName]);

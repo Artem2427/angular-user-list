@@ -1,4 +1,32 @@
-<p>users works!</p>
+<div class="container" [ngClass]="{ grid: isCreateUser }">
+  <div clsss="left">
+    <div class="action">
+      <button cButton (click)="handleOpenCreateUser()">Create</button>
+    </div>
+
+    @if(users.length) {
+    <c-table
+      [columns]="userColumnsConfig"
+      [items]="users"
+      (onRowClick)="handleRedirectToUserPage($event)"
+    ></c-table>
+    } @else {
+    <div class="empty">No users yet</div>
+    }
+  </div>
+  @if (isCreateUser) {
+  <div class="right">
+    <c-user-form
+      [user]="null"
+      [serverError]="serverError | async"
+      (onClose)="handleClose()"
+      (onCreateOrSave)="handleCreateUser($event)"
+    ></c-user-form>
+  </div>
+  }
+</div>
+
+<!-- <p>users works!</p>
 <h1>Test title</h1>
 <button cButton (click)="handleButtonClick()">First test</button>
 <button cButton [color]="'secondary'">Second test</button>
@@ -12,7 +40,7 @@
     <c-input
       customLabel
       type="email"
-      id="email"
+      id="email56"
       placeholder="jhonDoe@example.com"
       [formControl]="formUtilities.getControl(formRegister, 'email')"
       name="email"
@@ -26,7 +54,7 @@
       label="Password"
       type="password"
       placeholder="Enter password"
-      id="password1"
+      id="password165"
       name="email"
       [formControl]="formUtilities.getControl(formRegister, 'password')"
       [additionalValidators]="
@@ -37,7 +65,7 @@
     <c-select
       customLabel
       label="Select"
-      id="select_1"
+      id="select_144"
       name="age"
       [options]="['1', '2', '3']"
       [formControl]="formUtilities.getControl(formRegister, 'age')"
@@ -45,10 +73,11 @@
     />
     <button cButton type="submit">Submit</button>
   </form>
-</div>
+</div> -->
 
-<button (click)="openModal(modalTemplate)">Open modal</button>
+<!-- <button (click)="openModal(createNewUserTemplate)">Open modal</button> -->
 
-<ng-template #modalTemplate>
-  <div>This is our custom modal content</div>
-</ng-template>
+<!-- <ng-template #createNewUserTemplate>
+  <c-user-form (onSaveOrCreate)="handleCreateUser($event)"></c-user-form>
+  <button cButton>Test</button>
+</ng-template> -->

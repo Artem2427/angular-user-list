@@ -1,20 +1,20 @@
 @if (control) {
 <div class="content-input">
   @if (label) {
-  <label [htmlFor]="id || null">{{ label }}{{ isRequired ? '*' : '' }}</label>
+  <label>{{ label }}{{ isRequired ? '*' : '' }}</label>
   }
-
   <input
     class="input"
-    [ngClass]="{ error: !isValid() }"
+    [ngClass]="{ error: !isValid(), 'left-padding': emailIcon }"
     [placeholder]="placeholder"
     [type]="type"
     [attr.value]="value || null"
-    [attr.id]="id || null"
     [formControl]="control"
   />
 
-  @if (!isValid()) {
+  @if (emailIcon) {
+  <img alt="email-icon" class="icon" src="assets/email.svg" />
+  } @if (!isValid()) {
   <c-error-input [formContained]="control" [controlName]="name"></c-error-input>
   }
 </div>

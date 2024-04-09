@@ -1,12 +1,29 @@
 .content-input {
   display: flex;
-  align-items: center;
+  position: relative;
   flex-direction: column;
   row-gap: 3px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.content-input select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 30px;
+}
+
+.content-input ::after {
+  content: '\25BC';
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  pointer-events: none;
 }
 
 label {
   font-size: 13px;
+  width: 100%;
 }
 
 .select {
@@ -18,9 +35,11 @@ label {
   align-items: center;
   padding: 0 var(--main-padding);
   outline: none;
+  width: 100%;
 }
 
 .error {
   border: 1px solid var(--coral);
   margin-bottom: 3px;
+  width: 100%;
 }

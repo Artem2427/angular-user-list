@@ -1,17 +1,16 @@
 @if (control) {
 <div class="content-input">
   @if (label) {
-  <label [htmlFor]="id || null">{{ label }}{{ isRequired ? '*' : '' }}</label>
+  <label>{{ label }}{{ isRequired ? '*' : '' }}</label>
   }
-
   <select
-    [id]="id || null"
     [formControl]="control"
+    [name]="name"
     class="select"
     [ngClass]="{ error: !isValid() }"
   >
     @for (option of options; track option) {
-    <option [value]="option">{{ option }}</option>
+    <option [value]="option.value">{{ option.label }}</option>
     }
   </select>
 
